@@ -1,0 +1,25 @@
+{
+  "name": "cinetech",
+  "version": "1.0.0",
+  "description": "cinetech project",
+  "main": "js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibniyamine-chabane/cinetech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibniyamine-chabane/cinetech/issues"
+  },
+  "homepage": "https://github.com/ibniyamine-chabane/cinetech#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.83.1"
+  }
+}

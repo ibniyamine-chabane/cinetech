@@ -1,3 +1,7 @@
 # ignore all directories with the name test
 ############
 vendor/
+node_modules/
+# ignore all extentions 
+############
+.env

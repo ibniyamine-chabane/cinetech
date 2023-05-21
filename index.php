@@ -10,6 +10,23 @@ $router->map('GET', '/', function () {
 	require_once("src/View/home.php");
 }, 'home');
 
+$router->map('GET', '/movies', function () {
+    echo"<h1>page films</h1>";
+	require_once("src/View/movies.php");
+}, 'movies');
+
+$router->map('GET', '/series', function () {
+    echo"<h1>page series</h1>";
+	require_once("src/View/series.php");
+}, 'series');
+
+$router->map('GET', '/detail', function () {
+    echo"<h1>page detail</h1>";
+	require_once("src/View/detail.php");
+}, 'detail');
+
+
+
 $match = $router->match();
 
 // call closure or throw 404 status
