@@ -2,6 +2,6 @@
 ############
 vendor/
 node_modules/
-# ignore all extentions 
+# ignore all extentions     
 ############
 .env

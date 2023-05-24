@@ -59,5 +59,14 @@ class UserController
         header("Location: /super-week");
     }
     
+    public function key() 
+    {
+        $file = file(".env");
+        $tab = explode('=', $file[0]);
+        $apikey = [$tab[0] => $tab[1]];
+        var_dump($apikey);
+        echo json_encode($apikey);
+    }
+
 }
 ?>

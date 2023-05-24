@@ -64,5 +64,7 @@ class UserModel
         $stmt->execute(array($id));
         return $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    
 }   
 ?>

@@ -1,5 +1,7 @@
 <?php 
 
+use App\Controller\AuthController;
+use App\Controller\UserController;
 require_once('vendor/autoload.php');
 
 $router = new AltoRouter();
@@ -25,6 +27,11 @@ $router->map('GET', '/detail', function () {
 	require_once("src/View/detail.php");
 }, 'detail');
 
+$router->map('GET', '/test', function () {
+    echo"<h1>page detail</h1>";
+	$apikey = new UserController;
+	$apikey->key();
+}, 'fetch');
 
 
 $match = $router->match();
