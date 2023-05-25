@@ -17,19 +17,7 @@
     </nav>
     <main>
         <section id="movies">
-            <div class="movies-container">
-                <!--<div class="movie-card">
-                    <img id="movie-image" src="" alt="Nom du film">
-                    <h2 id="movie-name"></h2>
-                    <p id="movie-date"></p>
-                </div>
-
-                <div class="movie-card">
-                    <img src="" alt="Nom du film">
-                    <h2>Nom du film</h2>
-                    <p>Date de sortie</p>
-                </div>-->
-
+            <div class="movies-container" id="movies-container">
             </div>
         </section>
     </main>     
