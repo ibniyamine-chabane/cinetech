@@ -22,7 +22,7 @@ $router->map('GET', '/series', function () {
 	require_once("src/View/series.php");
 }, 'series');
 
-$router->map('GET', '/detail', function () {
+$router->map('GET', '/detail/[i:id]', function ($id) {
     echo"<h1>page detail</h1>";
 	require_once("src/View/detail.php");
 }, 'detail');

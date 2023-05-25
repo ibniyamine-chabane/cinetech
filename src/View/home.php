@@ -9,15 +9,16 @@
     <title>Home</title>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="films.html">Films</a></li>
-            <li><a href="series.html">Séries</a></li>
-        </ul>
-    </nav>
+    <?php require_once('header.php'); ?>
     <main>
         <section id="movies">
+            <h2>les films du moment</h2>
             <div class="movies-container" id="movies-container">
+            </div>
+        </section>
+        <section id="series">
+            <h2>les series du moment</h2>
+            <div class="series-container" id="series-container">
             </div>
         </section>
     </main>     

@@ -6,7 +6,7 @@ class UserModel
 
     public function insert($email ,$firstname, $lastname)
     {
-        $database = new PDO('mysql:host=localhost;dbname=superweek;charset=utf8;port=3307', 'root', '');
+        $database = new PDO('mysql:host=localhost;dbname=cinetech;charset=utf8;port=3307', 'root', '');
         $query = "INSERT INTO user (email, first_name, last_name) VALUES ((?) ,(?) ,(?))";
         $stmt = $database->prepare($query);
         $stmt->execute(array($email, $firstname, $lastname));
@@ -14,7 +14,7 @@ class UserModel
 
     public function findAll() 
     {
-        $database = new PDO('mysql:host=localhost;dbname=superweek;charset=utf8;port=3307', 'root', '');
+        $database = new PDO('mysql:host=localhost;dbname=cinetech;charset=utf8;port=3307', 'root', '');
         $query = "SELECT * FROM user";
         $stmt = $database->prepare($query);
         $stmt->execute(array());
@@ -40,7 +40,7 @@ class UserModel
 
     public function add($title, $content)
     {
-        $database = new PDO('mysql:host=localhost;dbname=superweek;charset=utf8;port=3307', 'root', '');
+        $database = new PDO('mysql:host=localhost;dbname=cinetech;charset=utf8;port=3307', 'root', '');
         $query = "INSERT INTO book (title, content, id_user) VALUES ((?) ,(?) ,(?))";
         $stmt = $database->prepare($query);
         $stmt->execute(array($title, $content, $_SESSION['id_user']));
@@ -49,7 +49,7 @@ class UserModel
     
     public function finAllBooks()
     {
-        $database = new PDO('mysql:host=localhost;dbname=superweek;charset=utf8;port=3307', 'root', '');
+        $database = new PDO('mysql:host=localhost;dbname=cinetech;charset=utf8;port=3307', 'root', '');
         $query = "SELECT * FROM book";
         $stmt = $database->prepare($query);
         $stmt->execute(array());
@@ -58,7 +58,7 @@ class UserModel
 
     public function findBook($id)
     {
-        $database = new PDO('mysql:host=localhost;dbname=superweek;charset=utf8;port=3307', 'root', '');
+        $database = new PDO('mysql:host=localhost;dbname=cinetech;charset=utf8;port=3307', 'root', '');
         $query = "SELECT * FROM book WHERE id = (?)";
         $stmt = $database->prepare($query);
         $stmt->execute(array($id));

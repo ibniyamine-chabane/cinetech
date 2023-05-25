@@ -1,20 +1,5 @@
 
-// alert("Bonjour Nejiv")
 
-// fetch('/test')
-// .then(response => response.json())
-// .then(data => {
-//     const apikey = data.API_KEY;
-//     alert(apikey);   
-// })
-
-
-// fetch(`https://api.themoviedb.org/3/movie/550?api_key=${apikey}`)
-// .then(response => response.text())
-// .then(data => {
-//     const section = document.getElementById("section");
-//     section.innerHTML = data;
-// })
 
 const options = {
     method: 'GET',
@@ -24,39 +9,68 @@ const options = {
     }
   };
   
+// function to formate the date in french way with Date class
+  function frenchDate(frenchdateString) {
+    const dateStr = frenchdateString;
+    const date = new Date(dateStr);
+
+    const moisEnFrancais = [
+      'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+      'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
+    ];
+
+    const jour = date.getDate().toString().padStart(2, '0');
+    const mois = moisEnFrancais[date.getMonth()];
+    const annee = date.getFullYear().toString();     
+    const dateFormatee = `${jour} ${mois} ${annee}`;
+    return dateFormatee
+  }
   
-  
-  fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1', options)
-    .then(response => response.json())
-    .then(data => { 
+// display the movies on Air  
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1', options)
+  .then(response => response.json())
+  .then(data => { 
+      data.results.forEach(movies => {
+       
+      const moviesContainer = document.getElementsByClassName('movies-container')[0];
+      const containerCard = document.createElement('div');// a reprendre 
+      containerCard.classList.add('movie-card');
+      moviesContainer.appendChild(containerCard);
+      
+      const {original_title, poster_path, backdrop_path, release_date, id} = movies;
+      containerCard.innerHTML = `<img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film">
+                                <h2 id="movie-name">${original_title}</h2>
+                                <p id="movie-date">` + frenchDate(release_date) + `</p>`; 
+       
+        // console.log(movies);
+    });
         
-        
-        data.results.forEach(movies => {
-         
-        //creation de la div container qui aura comme className movies-container
-        // const moviesSection = document.getElementById('movies');
-        // const container = document.createElement('div');
-        // container.classList.add('movies-container');
-        // moviesSection.appendChild(container); 
+  })
+  .catch(err => console.error(err));
 
-        const moviesContainer = document.getElementsByClassName('movies-container')[0];
-        const containerCard = document.createElement('div');// a reprendre 
-        // console.log(moviesContainer);
-        containerCard.classList.add('movie-card');
-        // console.log(containerCard);
-        moviesContainer.appendChild(containerCard);
-        // console.log(containerCard);
-        
-        const {original_title, poster_path, backdrop_path, release_date} = movies;
 
-        containerCard.innerHTML = `<img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film">
-                                  <h2 id="movie-name">${original_title}</h2>
-                                  <p id="movie-date">${release_date}</p>`; 
-         
-          console.log(movies)
-        // console.log(card);
-
-      });
-          
+// display the series on Air 
+fetch('https://api.themoviedb.org/3/tv/airing_today?language=en-FR&page=1', options)
+  .then(response => response.json())
+  .then(data => {
+        data.results.forEach(series => {
+       
+      const seriesContainer = document.getElementsByClassName('series-container')[0];
+      const containerCard = document.createElement('div');
+      containerCard.classList.add('serie-card');
+      seriesContainer.appendChild(containerCard);
+      
+      const {name, poster_path, backdrop_path, first_air_date, id} = series;
+      
+      //formate the date in french way
+      
+      
+      containerCard.innerHTML = `<a href="detail/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"><a/>
+                                <h2 id="movie-name">${name}</h2>
+                                <p id="movie-date">` + frenchDate(first_air_date) + `</p>`; 
+       
+        // console.log(series);
     })
-    .catch(err => console.error(err));
+
+  })  
+  .catch(err => console.error(err));

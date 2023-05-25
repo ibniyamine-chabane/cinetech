@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar {
     background-color: #333;
     padding: 16px;
@@ -22,13 +28,29 @@
 }
 
 /* Styles pour les cartes de film */
-.movies-container {
-    display: flex;
-    flex-wrap: wrap;
+#movies {
+    position: relative;
 }
 
-.movie-card {
-    width: 300px;
+.movies-container , .series-container{
+    display: -webkit-box;
+    /* display: -webkit-inline-box; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    margin: auto;
+    width: 79%;
+    border: 1px solid;
+    height: 550px;
+    overflow-x: scroll
+}
+
+h2 {
+    text-align: center;
+}
+
+.movie-card, .serie-card{
+    width: 260px;
     background-color: #f0f0f0;
     border-radius: 8px;
     padding: 16px;
@@ -36,7 +58,7 @@
     margin: 16px;
 }
 
-.movie-card img {
+.movie-card img , .serie-card img{
     width: 100%;
     border-radius: 4px;
     margin-bottom: 8px;
