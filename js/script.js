@@ -38,7 +38,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1', op
       moviesContainer.appendChild(containerCard);
       
       const {original_title, poster_path, backdrop_path, release_date, id} = movies;
-      containerCard.innerHTML = `<img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film">
+      containerCard.innerHTML = `<a href="detail/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"></a>
                                 <h2 id="movie-name">${original_title}</h2>
                                 <p id="movie-date">` + frenchDate(release_date) + `</p>`; 
        
