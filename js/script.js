@@ -38,7 +38,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1', op
       moviesContainer.appendChild(containerCard);
       
       const {original_title, poster_path, backdrop_path, release_date, id} = movies;
-      containerCard.innerHTML = `<a href="detail/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"></a>
+      containerCard.innerHTML = `<a href="detail/movie/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"></a>
                                 <h2 id="movie-name">${original_title}</h2>
                                 <p id="movie-date">` + frenchDate(release_date) + `</p>`; 
        
@@ -65,7 +65,7 @@ fetch('https://api.themoviedb.org/3/tv/airing_today?language=en-FR&page=1', opti
       //formate the date in french way
       
       
-      containerCard.innerHTML = `<a href="detail/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"><a/>
+      containerCard.innerHTML = `<a href="detail/serie/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"><a/>
                                 <h2 id="movie-name">${name}</h2>
                                 <p id="movie-date">` + frenchDate(first_air_date) + `</p>`; 
        

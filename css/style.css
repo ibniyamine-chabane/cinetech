@@ -64,6 +64,46 @@ h2 {
     margin-bottom: 8px;
 }
 
+/************* page détail ***********************/
+.detail-container {
+    display: flex;
+    width: 68%;
+    margin: auto;
+    border: 1px solid;
+    justify-content: space-around;
+}
+
+.detail-img-box {
+    width: 33%;
+}
+
+.detail-img-box img {
+    position: relative;
+    width: 100%;
+}
+
+.infos {
+    width: 45%;
+}
+
+.companies-container {
+    display: flex;
+}
+
+.companies-box {
+    width: 100px;
+}
+
+.companies-box img {
+    position: relative;
+    width: 90px;
+}
+
+
+
+
+
+
 @media (max-width: 600px) {
     .film-card {
         width: 100%;

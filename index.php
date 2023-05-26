@@ -3,7 +3,7 @@
 use App\Controller\AuthController;
 use App\Controller\UserController;
 require_once('vendor/autoload.php');
-
+session_start();
 $router = new AltoRouter();
 $router->setBasePath('/cinetech');
 
@@ -22,10 +22,27 @@ $router->map('GET', '/series', function () {
 	require_once("src/View/series.php");
 }, 'series');
 
-$router->map('GET', '/detail/[i:id]', function ($id) {
-    echo"<h1>page detail</h1>";
-	require_once("src/View/detail.php");
-}, 'detail');
+$router->map('GET', '/detail/movie/[i:id]', function ($id) {
+    echo"<h1>page detail film</h1>";
+	$id_movie_serie = [ 'id' => $id];
+	$_SESSION['id_movie_serie'] = $id_movie_serie;
+	// echo json_encode($_SESSION['id_movie']);
+	require_once("src/View/detail_movie.php");
+}, 'detail_movie');
+
+$router->map('GET', '/detail/serie/[i:id]', function ($id) {
+    echo"<h1>page detail serie</h1>";
+	$id_movie_serie = [ 'id' => $id];
+	$_SESSION['id_movie_serie'] = $id_movie_serie;
+	// echo json_encode($_SESSION['id_movie']);
+	require_once("src/View/detail_serie.php");
+}, 'detail_serie');
+
+$router->map('GET', '/detail/idmovie', function () {
+	echo json_encode($_SESSION['id_movie_serie']);
+	
+	// header("Location: /cinetech/");
+}, 'id_movie');
 
 $router->map('GET', '/test', function () {
     echo"<h1>page detail</h1>";
