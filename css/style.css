@@ -88,15 +88,17 @@ h2 {
 
 .companies-container {
     display: flex;
+    align-items: center;
 }
 
 .companies-box {
-    width: 100px;
+    width: 65px;
+    margin-right: 13px;
 }
 
 .companies-box img {
     position: relative;
-    width: 90px;
+    width: 100%;
 }
 
 
