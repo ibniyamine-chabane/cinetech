@@ -22,6 +22,8 @@
                     <p>genre <br></p>
                     <p>pays de production <br></p>
                     <p>langue <br></p>
+                    <p>nombre de saison : </p>
+                    <p>nombre d'épisode :</p>
                     <div>
                         <p>entreprise de production</p>
                         <div class="companies-container"></div>

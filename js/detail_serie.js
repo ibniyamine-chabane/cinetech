@@ -54,7 +54,13 @@ fetch('../idmovie')
             const spokenLanguage = document.querySelector('#infos p:nth-of-type(4)');
             const language = data.spoken_languages.map((languages) => languages.name).join(", ");
             spokenLanguage.innerHTML = "langues : " + language;
-            // console.log(data.overview)
+
+            const seasonTotal = document.querySelector('#infos p:nth-of-type(5)');
+            seasonTotal.innerHTML = `nombre de saisons : ${data.number_of_seasons}`;
+            
+            const episodesTotal = document.querySelector('#infos p:nth-of-type(6)');
+            episodesTotal.innerHTML = `nombre d'épisodes : ${data.number_of_episodes}`;
+
             const overview = document.querySelector('.overview');
             overview.innerHTML = `<p>synopsis :</p>
                                   <p>${data.overview}</p>`;
