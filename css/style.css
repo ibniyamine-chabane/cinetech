@@ -101,7 +101,14 @@ h2 {
     width: 100%;
 }
 
+/***************page movies *****************/
 
+.grid {
+    display: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
 
 
 
