@@ -32,6 +32,11 @@
                 </div>
             </div>
         </section>
+        <section id='recommandation'>
+            <h2>Recommandation</h2>
+            <div class="series-container" id="series-container">
+            </div>
+        </section>
     </main>
 </body>
 </html>

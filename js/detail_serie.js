@@ -88,6 +88,27 @@ fetch('../idmovie')
 
         })
         .catch(err => console.error(err));
+
+        fetch(`https://api.themoviedb.org/3/tv/${selected.id}/recommendations?language=fr-FR&page=1`, options)
+            .then(response => response.json())
+            .then(response => {
+              console.log(response)
+              
+              response.results.forEach(movies => {
+       
+                const seriesContainer = document.getElementsByClassName('series-container')[0];
+                const containerCard = document.createElement('div');// a reprendre 
+                containerCard.classList.add('serie-card');
+                seriesContainer.appendChild(containerCard);
+                
+                const {name, poster_path, backdrop_path, first_air_date, id} = movies;
+                containerCard.innerHTML = `<a href="../../detail/serie/${id}"><img id="serie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"></a>
+                                          <h2 id="serie-name">${name}</h2>
+                                          <p id="serie-date">` + frenchDate(first_air_date) + `</p>`; 
+              })
+
+          })    
+          .catch(err => console.error(err));
     
 })
 .catch(err => console.error(err));
