@@ -37,7 +37,7 @@
     /* display: -webkit-inline-box; */
     /* display: flex; */
     /* flex-wrap: wrap; */
-    /* justify-content: center; */
+    justify-content: center;
     margin: auto;
     width: 79%;
     border: 1px solid;
@@ -89,6 +89,7 @@ h2 {
 .companies-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .companies-box {
