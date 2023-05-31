@@ -41,7 +41,7 @@
     margin: auto;
     width: 79%;
     border: 1px solid;
-    height: 550px;
+    height: 435px;
     overflow-x: scroll
 }
 
@@ -50,7 +50,7 @@ h2 {
 }
 
 .movie-card, .serie-card{
-    width: 260px;
+    width: 247px;
     background-color: #f0f0f0;
     border-radius: 8px;
     padding: 16px;
@@ -59,7 +59,7 @@ h2 {
 }
 
 .movie-card img , .serie-card img{
-    width: 100%;
+    width: 75%;
     border-radius: 4px;
     margin-bottom: 8px;
 }

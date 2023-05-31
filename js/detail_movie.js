@@ -81,6 +81,26 @@ fetch('../idmovie')
 
         })
         .catch(err => console.error(err));
-    
+
+        fetch(`https://api.themoviedb.org/3/movie/${selected.id}/recommendations?language=fr-FR&page=1`, options)
+            .then(response => response.json())
+            .then(response => {
+              console.log(response)
+              
+              response.results.forEach(movies => {
+       
+                const moviesContainer = document.getElementsByClassName('movies-container')[0];
+                const containerCard = document.createElement('div');// a reprendre 
+                containerCard.classList.add('movie-card');
+                moviesContainer.appendChild(containerCard);
+                
+                const {original_title, poster_path, backdrop_path, release_date, id} = movies;
+                containerCard.innerHTML = `<a href="../../detail/movie/${id}"><img id="movie-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="Nom du film"></a>
+                                          <h2 id="movie-name">${original_title}</h2>
+                                          <p id="movie-date">` + frenchDate(release_date) + `</p>`; 
+              })
+
+          })    
+          .catch(err => console.error(err));
 })
 .catch(err => console.error(err));
