@@ -16,9 +16,9 @@
             <div class="movies-container grid" id="movies-container">
             </div>
             <div class="pagination">
-                <span id="prev"></span>
+                <button id="prev"></button>
                 <span id="current"></span>
-                <span id="next"></span>
+                <button id="next"></button>
             </div>
         </section>
     </main>     
